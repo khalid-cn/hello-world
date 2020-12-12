@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route('/')
 def helloWorld():
     return "Hello World"
-@app.route('/gcd/', METHOD=['POST'])
+@app.route('/gcd/', methods=['POST'])
 def gcd(a, b):
     req_data = request.get_json()
     a = req_data["a"]
@@ -30,4 +30,4 @@ def gcd(a, b):
     return '''the gcd of {} and {} is {}'''.format(req_data["a"], req_data["b"], g)
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(debug=True, port=8080)
