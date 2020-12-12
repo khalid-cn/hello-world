@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route('/')
 def helloWorld():
     return "Hello World"
-@app.route('/gcd', METHOD=['POST'])
+@app.route('/gcd/', METHOD=['POST'])
 def gcd(a, b):
     req_data = request.get_json()
     a = req_data["a"]
